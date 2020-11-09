@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanPrstenuDveVeze", "PanPrstenuDveVeze\PanPrstenuDveVeze.csproj", "{0FDD7A46-B234-4B78-A112-74EACB4066CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FDD7A46-B234-4B78-A112-74EACB4066CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FDD7A46-B234-4B78-A112-74EACB4066CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FDD7A46-B234-4B78-A112-74EACB4066CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FDD7A46-B234-4B78-A112-74EACB4066CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB178783-BB45-4A64-A6CA-6C821CDD80A6}
+	EndGlobalSection
+EndGlobal
