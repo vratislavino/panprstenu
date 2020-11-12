@@ -12,12 +12,31 @@ namespace PanPrstenuDveVeze
         private float angle;
         private float speed;
 
-        private float size;
+        private float size = 8;
 
+        private float posX, posY;
         private Point position;
 
+        public Stone(float angle, float speed, Point position) {
+            this.angle = angle;
+            this.speed = speed;
+            this.position = position;
+            posX = position.X;
+            posY = position.Y;
+        }
+
         public void Move() {
-            // TODO MOVE
+            float x = (float) (posX + Math.Cos(ToRad(angle)) * speed);
+            float y = (float) (posY + Math.Sin(ToRad(angle)) * speed);
+
+            posX = x;
+            posY = y;
+
+            position = new Point((int)posX, (int)posY);
+        }
+
+        private double ToRad(float deg) {
+            return (Math.PI / 180) * deg;
         }
 
         public void Draw(Graphics g) {

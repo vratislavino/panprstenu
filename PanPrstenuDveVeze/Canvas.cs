@@ -15,6 +15,8 @@ namespace PanPrstenuDveVeze
         List<IDrawable> drawables = new List<IDrawable>();
 
         List<Tower> towers = new List<Tower>();
+        List<Spawner> spawners = new List<Spawner>();
+        List<Stone> stones = new List<Stone>();
 
         Random random = new Random();
 
@@ -23,6 +25,23 @@ namespace PanPrstenuDveVeze
             this.DoubleBuffered = true;
             PlaceNewTower();
             PlaceNewTower();
+        }
+
+        public void ObjectsUpdate(float interval) {
+            spawners.ForEach(x => x.AddTime(interval));
+            stones.ForEach(x => x.Move());
+            Refresh();
+        }
+
+        public void AddSpawner(Spawner spawner) {
+            spawners.Add(spawner);
+        }
+
+        public void AddStone(Stone stone) {
+            stones.Add(stone);
+            Console.WriteLine(stones.Count);
+            drawables.Add(stone);
+            Refresh();
         }
 
         public void PlaceNewTower() {

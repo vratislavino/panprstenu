@@ -38,63 +38,76 @@
             // canvas1
             // 
             this.canvas1.BackColor = System.Drawing.Color.White;
-            this.canvas1.Location = new System.Drawing.Point(12, 83);
+            this.canvas1.Location = new System.Drawing.Point(16, 102);
+            this.canvas1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.canvas1.Name = "canvas1";
-            this.canvas1.Size = new System.Drawing.Size(1263, 721);
+            this.canvas1.Size = new System.Drawing.Size(1684, 887);
             this.canvas1.TabIndex = 0;
             // 
             // scoreLabel
             // 
             this.scoreLabel.AutoSize = true;
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.scoreLabel.Location = new System.Drawing.Point(713, 32);
+            this.scoreLabel.Location = new System.Drawing.Point(951, 39);
+            this.scoreLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(65, 24);
+            this.scoreLabel.Size = new System.Drawing.Size(83, 29);
             this.scoreLabel.TabIndex = 7;
             this.scoreLabel.Text = "Score:";
             // 
             // addTowerButton
             // 
             this.addTowerButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.addTowerButton.Location = new System.Drawing.Point(902, 17);
+            this.addTowerButton.Location = new System.Drawing.Point(1203, 21);
+            this.addTowerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.addTowerButton.Name = "addTowerButton";
-            this.addTowerButton.Size = new System.Drawing.Size(88, 55);
+            this.addTowerButton.Size = new System.Drawing.Size(117, 68);
             this.addTowerButton.TabIndex = 8;
             this.addTowerButton.Text = "+";
             this.addTowerButton.UseVisualStyleBackColor = true;
             // 
+            // gameTimer
+            // 
+            this.gameTimer.Enabled = true;
+            this.gameTimer.Interval = 10;
+            this.gameTimer.Tick += new System.EventHandler(this.GameTimer_Tick);
+            // 
             // instakill
             // 
-            this.instakill.Location = new System.Drawing.Point(72, 12);
+            this.instakill.Location = new System.Drawing.Point(96, 15);
+            this.instakill.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.instakill.Name = "instakill";
-            this.instakill.Size = new System.Drawing.Size(173, 65);
+            this.instakill.Size = new System.Drawing.Size(231, 80);
             this.instakill.TabIndex = 9;
             // 
             // doublepoints
             // 
-            this.doublepoints.Location = new System.Drawing.Point(251, 12);
+            this.doublepoints.Location = new System.Drawing.Point(335, 15);
+            this.doublepoints.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.doublepoints.Name = "doublepoints";
-            this.doublepoints.Size = new System.Drawing.Size(173, 65);
+            this.doublepoints.Size = new System.Drawing.Size(231, 80);
             this.doublepoints.TabIndex = 10;
             // 
             // immortality
             // 
-            this.immortality.Location = new System.Drawing.Point(430, 12);
+            this.immortality.Location = new System.Drawing.Point(573, 15);
+            this.immortality.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.immortality.Name = "immortality";
-            this.immortality.Size = new System.Drawing.Size(173, 65);
+            this.immortality.Size = new System.Drawing.Size(231, 80);
             this.immortality.TabIndex = 11;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1287, 816);
+            this.ClientSize = new System.Drawing.Size(1716, 1004);
             this.Controls.Add(this.immortality);
             this.Controls.Add(this.doublepoints);
             this.Controls.Add(this.instakill);
             this.Controls.Add(this.addTowerButton);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.canvas1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
