@@ -17,6 +17,10 @@ namespace PanPrstenuDveVeze
         private float posX, posY;
         private Point position;
 
+        public Point Position {
+            get { return position; }
+        }
+
         public Stone(float angle, float speed, Point position) {
             this.angle = angle;
             this.speed = speed;

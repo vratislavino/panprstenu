@@ -71,6 +71,7 @@
     <Compile Include="Spawner.cs" />
     <Compile Include="Stone.cs" />
     <Compile Include="Tower.cs" />
+    <Compile Include="TowerHp.cs" />
     <EmbeddedResource Include="Buff.resx">
       <DependentUpon>Buff.cs</DependentUpon>
     </EmbeddedResource>

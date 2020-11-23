@@ -28,11 +28,16 @@ namespace PanPrstenuDveVeze
             Spawner sp = new Spawner(new Point(0, canvas1.Height), 0.1f, 270, 360);
             Spawner sp2 = new Spawner(new Point(canvas1.Width, canvas1.Height), 0.1f, 180, 270);
 
+            canvas1.TowerDestroyedStone += OnTowerDestroyedStone;
 
             canvas1.AddSpawner(sp);
             canvas1.AddSpawner(sp2);
             sp.StoneCreated += canvas1.AddStone;
             sp2.StoneCreated += canvas1.AddStone;
+        }
+
+        private void OnTowerDestroyedStone(int pointsCount) {
+            Score += doublepoints.IsActive ? 2 * pointsCount : pointsCount;
         }
 
         private void InitBuffs() {
