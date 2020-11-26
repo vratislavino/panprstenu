@@ -37,6 +37,14 @@ namespace PanPrstenuDveVeze
             posY = y;
 
             position = new Point((int)posX, (int)posY);
+
+            // jestli je stone mimo hranice canvasu
+            if(position.X < 0 
+                || position.X > Canvas.Instance.Width 
+                || position.Y < 0 
+                || position.Y > Canvas.Instance.Height) {
+                Canvas.Instance.DestroyStone(this);
+            }
         }
 
         private double ToRad(float deg) {

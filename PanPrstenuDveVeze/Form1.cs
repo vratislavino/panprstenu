@@ -12,7 +12,15 @@ namespace PanPrstenuDveVeze
 {
     public partial class Form1 : Form
     {
+        int towerPrice = 100;
         int score = 40;
+
+        private static Form1 instance;
+        public static Form1 Instance { get { return instance; } }
+
+        public Buff Instakill { get { return instakill; } }
+        public Buff Immortality { get { return immortality; } }
+
         public int Score {
             get { return score; }
             private set {
@@ -23,7 +31,8 @@ namespace PanPrstenuDveVeze
 
         public Form1() {
             InitializeComponent();
-            Score = 100;
+            addTowerButton.Text = "+ (" + towerPrice + ")";
+            Score = 1000;
             InitBuffs();
             Spawner sp = new Spawner(new Point(0, canvas1.Height), 0.1f, 270, 360);
             Spawner sp2 = new Spawner(new Point(canvas1.Width, canvas1.Height), 0.1f, 180, 270);
@@ -34,6 +43,7 @@ namespace PanPrstenuDveVeze
             canvas1.AddSpawner(sp2);
             sp.StoneCreated += canvas1.AddStone;
             sp2.StoneCreated += canvas1.AddStone;
+            instance = this;
         }
 
         private void OnTowerDestroyedStone(int pointsCount) {
@@ -59,6 +69,18 @@ namespace PanPrstenuDveVeze
 
         private void GameTimer_Tick(object sender, EventArgs e) {
             canvas1.ObjectsUpdate(gameTimer.Interval / 1000f);
+        }
+
+        private void AddTowerButton_Click(object sender, EventArgs e) {
+            if (Score >= towerPrice) {
+                if (canvas1.PlaceNewTower()) {
+                    Score -= towerPrice;
+                } else {
+                    messageLabel.Text = "Máte příliš mnoho věží!";
+                }
+            } else {
+                messageLabel.Text = "Nemáš dost peněz...";
+            }
         }
     }
 }

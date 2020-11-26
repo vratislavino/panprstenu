@@ -29,12 +29,16 @@
             // 
             // Canvas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Canvas";
-            this.Size = new System.Drawing.Size(883, 508);
+            this.Size = new System.Drawing.Size(1177, 625);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Canvas_MouseUp);
             this.ResumeLayout(false);
 
         }

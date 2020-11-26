@@ -31,7 +31,7 @@ namespace PanPrstenuDveVeze
         private const int MAX_LEVEL = 10;
         private const float RANGE_MULT = 1.1f;
         private const float XP_MULT = 1.3f;
-        private const float BASE_RANGE = 100; // 20
+        private const float BASE_RANGE = 20; // 20
 
         public static float MaxRange = -1;
 
@@ -59,7 +59,7 @@ namespace PanPrstenuDveVeze
 
         private float currentRange;
 
-        private float timeToDestoyStone = 50f;//0.3f;
+        private float timeToDestoyStone = 50f;//0.3f;//0.3f;
         private float destroyCooldown = 0;
 
         private static Pen towerPen = new Pen(Color.Black, 3);
@@ -96,7 +96,7 @@ namespace PanPrstenuDveVeze
 
         public void DestroyStone(Stone stone) {
             destroyingStones.Add(stone);
-            destroyCooldown = timeToDestoyStone;
+            destroyCooldown = Form1.Instance.Instakill.IsActive ? 0 : timeToDestoyStone;
         }
 
         public void CommitDie() {
@@ -129,17 +129,22 @@ namespace PanPrstenuDveVeze
         }
 
         public bool CheckTowerHit(Stone s) {
-            double dist = position.Distance(s.Position);
+            return CheckTowerHit(s.Position);
+        }
+
+        public bool CheckTowerHit(Point p) {
+            double dist = position.Distance(p);
             return dist <= size.Width / 2;
         }
 
         public void Hit(Stone s) {
-            hp.CurrentHp--;
+            if(!Form1.Instance.Immortality.IsActive)
+                hp.CurrentHp--;
             destroyingStones.Add(s);
         }
 
         public void Move(Point pos) {
-
+            position = pos;
         }
     }
 }
