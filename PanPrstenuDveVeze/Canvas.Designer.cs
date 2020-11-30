@@ -32,7 +32,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Canvas";
             this.Size = new System.Drawing.Size(1177, 625);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Canvas_Paint);
